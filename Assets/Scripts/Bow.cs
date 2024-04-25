@@ -53,16 +53,17 @@ namespace Archer
 
 
             // Instanciar una flecha
-           
+            GameObject arrow = Instantiate(arrowPrefab);
 
             // Colocar la flecha en el punto de referencia de la mano de la arquera
-         
+            arrow.transform.position = handPosition.position;
 
             // Orientar la flecha hacia delante con respecto a la arquera
-           
+            arrow.transform.rotation = transform.rotation;
 
             // Aplicar una fuerza a la flecha para que salga disparada
-          
+            arrow.GetComponent<Rigidbody>().AddForce(transform.forward * force, ForceMode.Impulse);
+
         }
     }
 
