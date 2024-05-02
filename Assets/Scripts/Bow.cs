@@ -26,6 +26,9 @@ namespace Archer
         [SerializeField]
         private Transform handPosition;
 
+        //[SerializeField]
+        //private AudioSource audio;
+
       
 
         private Animator animator;
@@ -63,6 +66,8 @@ namespace Archer
 
             // Aplicar una fuerza a la flecha para que salga disparada
             arrow.GetComponent<Rigidbody>().AddForce(transform.forward * force, ForceMode.Impulse);
+
+            //audio.Play();
 
         }
     }
